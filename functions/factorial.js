@@ -8,6 +8,7 @@ function factorial(number) {
     }
     return product;
    }
+   // A value returning function
    console.log(factorial(4)); // displays 24
    console.log(factorial(5)); // displays 120
    console.log(factorial(10)); // displays 3628800
