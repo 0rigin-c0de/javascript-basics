@@ -10,4 +10,6 @@ function showScope() {
    console.log(scope);   // displays "global"
    console.log(showScope());   // displays "local"
    console.log(scope);     // displays "local"
+
+   
    
