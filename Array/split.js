@@ -5,3 +5,4 @@
   for (var i = 0; i < words.length;++i){
     console.log("word " + i + ": " + words[i]);
   }
+  
