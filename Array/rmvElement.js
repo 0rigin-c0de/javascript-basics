@@ -4,6 +4,10 @@ let person =['Virat', 'Rohit','Rahul'];
 person.pop();
 console.log(person);
 
+
+let names = ['James', 'Nick', 'Johnson'];
+
+
 //remove the first element :- 
-person.shift();
+names.shift();
 console.log();
