@@ -5,3 +5,4 @@ var numbers = [23,24,25,26,27,28,29];
 numbers.reverse();
 console.log(numbers);
 
+
