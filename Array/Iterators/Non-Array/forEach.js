@@ -1,6 +1,6 @@
 /*This function takes a function as an argument 
  and applies the called function to each element of an array */
-
+/*this functions doubles the value of an array */
 function square(num) {
     console.log(num, num * num);
    }
