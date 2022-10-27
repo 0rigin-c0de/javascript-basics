@@ -18,4 +18,4 @@ some();
 
 ## New Array Generating Iterator Functions
 
-There are two iterator functions that return new arrays: ``` map() ``` and ``` filter().``` The map() function works like the foreach() function, applying a function to each element of an array. The difference between the two functions is that map() returns a new array with the results of the function application
+There are two iterator functions that return new arrays: ``` map() ``` and ``` filter().``` The ```map()``` function works like the ```foreach()``` function, applying a function to each element of an array. The difference between the two functions is that ```map()``` returns a new array with the results of the function application
