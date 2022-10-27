@@ -1,5 +1,3 @@
-# Iterator Functions
-
 # **Iterator Functions**
 
 The final set of array functions we examine are iterator functions. These functions apply a function to each element of an array, either returning a value, a set of values, or a new array after applying the function to each element of an array.
