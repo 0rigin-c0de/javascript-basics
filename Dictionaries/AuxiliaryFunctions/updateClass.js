@@ -37,4 +37,21 @@ function showAll() {
     delete this.datastore[key];
     }
    }
-    
+   var pbook = new Dictionary();
+   pbook.add("mike",1234);
+   pbook.add("david",426383);
+   pbook.add("tom",870679);
+
+     // Output1
+     console.log("mike's extension is  "+pbook.find("mike"));
+     console.log("david's extension is  "+pbook.find("david"));
+     console.log("tom's extension is  "+pbook.find("tom"));
+   
+     //Calling for remove method 
+     pbook.remove("mike");
+     console.log("mike's extension is  "+pbook.find("mike")); //output2
+
+     //output3
+     console.log("Number of entries: " + pbook.count());
+     console.log("David's extension: " + pbook.find("David"));
+
