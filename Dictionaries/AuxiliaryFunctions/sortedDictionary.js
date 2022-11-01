@@ -33,7 +33,7 @@ namebook.add("Mike", 2433);
 namebook.add("Cynthia", 9377);
 namebook.add("Jennifer", 9995);
 namebook.add("Danny", 7732);
-console.log( "David's extension " +namebook.find("David"));
-console.log("NameBook Entries " + namebook.showAll());
+console.warn( "David's extension " +namebook.find("David"));
+console.warn("NameBook Entries " + namebook.showAll());
 
 
