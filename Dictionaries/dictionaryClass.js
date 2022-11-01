@@ -1,5 +1,3 @@
-/* keys() function, when called with an object, returns all the keys stored in that
-object */
 
 function Dictionary() {
     this.add = add;
@@ -38,3 +36,6 @@ function Dictionary() {
     console.log("tom's extension is  "+pbook.find("tom"));
 
     //Calling for remove method 
+    pbook.remove("mike");
+    console.log("mike's extension is  "+pbook.find("mike"));
+   
