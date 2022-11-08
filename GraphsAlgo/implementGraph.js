@@ -1,50 +1,50 @@
 class Graph{
-    vertices = new Set();
-    adjacentList = new Map();
+  vertices = new Set();
+  adjacentList = new Map();
 
-    get vertices(){
-        return Array.from(this.vertices)
-    }
-    get adjacentList(){
-        const list = {};
-        this.adjacentList.forEach((val, key) => {
-            list[key] = Array.from(val);
-        });
+  get vertices(){
+      return Array.from(this.vertices)
+  }
+  get adjacentList(){
+      const list = {};
+      this.adjacentList.forEach((val, key) => {
+          list[key] = Array.from(val);
+      });
 
-        return list;
-    }
+      return list;
+  }
 
-    addVertex(vertex = null){
-        if(vertex !== null && vertex !== undefined){
-            this.vertices.add(vertex);
-            this.adjacentList.add(vertex, new Set());
-        }
-    }
-    addEdge(vertex1 = null, vertex2 = null , directed = true){
-        if(vertex1 !== null &&  vertex2 &&  vertex1 !== vertex2){
-            if(!this.adjacentList.has(vertex1)){
-                this.addVertex(vertex1);
-            }
-            if(!this.adjacentList.has(vertex2)){
-                this.addVertex(vertex2);
-            }
+  addVertex(vertex = null){
+      if(vertex !== null && vertex !== undefined){
+          this.vertices.add(vertex);
+          this.adjacentList.add(vertex, new Set());
+      }
+  }
+  addEdge(vertex1 = null, vertex2 = null , directed = true){
+      if(vertex1 !== null &&  vertex2 &&  vertex1 !== vertex2){
+          if(!this.adjacentList.has(vertex1)){
+              this.addVertex(vertex1);
+          }
+          if(!this.adjacentList.has(vertex2)){
+              this.addVertex(vertex2);
+          }
 
-            this.adjacentList.get(vertex1).add(vertex2);
-            
-            if(directed){
-                this.adjacentList.get(vertex2).add(vertex1);
-            }
-        } 
-    }
-    tostring(){
-        let str = '';
+          this.adjacentList.get(vertex1).add(vertex2);
+          
+          if(directed){
+              this.adjacentList.get(vertex2).add(vertex1);
+          }
+      } 
+  }
+  tostring(){
+      let str = '';
 
-        this.adjacentList.forEach((val, key) => {
-            str += `${key} -> ${Array.from(val).join}`
-        });
+      this.adjacentList.forEach((val, key) => {
+          str += `${key} -> ${Array.from(val).join}`
+      });
 
-        return str;
-    }
+      return str;
+  }
 }
 
 //Now instantiate the graph 
@@ -52,9 +52,15 @@ const graph = new Graph();
 
 const  alphabet = Array.from({length: 26}, (_, i) => String.fromCharCode(i + 65)); 
 
-const randomIndex = (max, min = 0)
+const randomIndex = (max, min = 0) =>
+Math.floor(Math.random() * Math.floor(max)) + Math.floor(min);
+
+alphabet.forEach(letter =>
+   graph.addEdge(letter, alphabet[randomIndex(alphabet.length)]));
 
 const vertices= ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+
+
 graph.addEdge('A', 'B'); 
 graph.addEdge('A', 'C');
 graph.addEdge('A', 'D');
@@ -67,5 +73,4 @@ graph.addEdge('B', 'F');
 graph.addEdge('E', 'I');
 
 console.log(
-    graph.tostring());
-    
+  graph.tostring());
