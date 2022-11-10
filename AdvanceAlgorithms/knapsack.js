@@ -1,22 +1,24 @@
 function max(a, b) {
-    return (a > b) ? a : b;
-   }
-   function knapsack(capacity, size, value, n) {
-    if (n == 0 || capacity == 0) {
+  return a > b ? a : b;
+}
+function knapsack(c, w, v, n, i = 0) {
+  if (c == 0) {
     return 0;
-    }
-    if (size[n-1] > capacity) {
-    return knapsack(capacity, size, value, n-1);
-    }
-    else {
-    return max(value[n-1] +
-    knapsack(capacity-size[n-1], size, value, n-1),
-    knapsack(capacity, size, value, n-1));
-    }
-   }
-   var value = [4,5,10,11,13];
-   var size = [3,4,7,8,9];
-   var capacity = 16;
-   var n = 5;
-   console.log(knapsack(capacity, size, value, n));
-   
+  }
+  if (w[i] > c) {
+    return knapsack(w, v, c, n, i + i);
+  }
+  if (i >= n) {
+    return 0;
+  }
+  return max(
+    v[i] + knapsack(w, v, c - w[i], n - 1, i++),
+    knapsack(w, v, c, n - 1, i + 1)
+  );
+}
+
+var v = [4, 5, 10, 11, 13];
+var w = [3, 4, 7, 8, 9];
+var c = 16;
+var n = 5;
+console.log(knapsack(v, w, c, n));
